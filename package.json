@@ -1,0 +1,40 @@
+{
+  "name": "@cincoders/release-tooling",
+  "version": "1.0.0",
+  "description": "Conventional-commit release automation shared by the CInCoders projects: release candidates on develop, promotion on main.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cincoders/release-tooling"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "release-prepare": "bin/release-prepare.mjs",
+    "release-promote": "bin/release-promote.mjs",
+    "release-version": "bin/release-version.mjs"
+  },
+  "exports": {
+    ".": "./lib/versions.mjs",
+    "./changelog.config.mjs": "./changelog.config.mjs"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "changelog.config.mjs"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "conventional-changelog-cli": "^5.0.0",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "conventional-recommended-bump": "^12.1.0",
+    "semver": "^7.8.5"
+  }
+}
