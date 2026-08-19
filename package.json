@@ -1,7 +1,17 @@
 {
   "name": "@cincoders/release-tooling",
   "version": "1.0.0",
-  "description": "Conventional-commit release automation shared by the CInCoders projects: release candidates on develop, promotion on main.",
+  "description": "Conventional-commit release automation for GitFlow: candidates on develop, promoted to stable on main.",
+  "keywords": [
+    "conventional-commits",
+    "semver",
+    "release",
+    "release-automation",
+    "changelog",
+    "gitflow",
+    "versioning",
+    "gitlab-ci"
+  ],
   "type": "module",
   "license": "MIT",
   "repository": {

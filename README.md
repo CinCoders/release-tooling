@@ -1,10 +1,9 @@
 # @cincoders/release-tooling
 
-Conventional-commit release automation shared by the CInCoders projects.
+Conventional-commit release automation for GitFlow.
 
-The flow it implements, in one line: **every merge into `develop` mints a release
-candidate; the merge into `main` promotes the candidate that got there into the
-stable version.**
+**Every merge into `develop` mints a release candidate; the merge into `main`
+promotes the candidate that got there into the stable version.**
 
 ```
 develop   1.4.0-rc.1 → 1.4.0-rc.2 → 1.4.0-rc.3 ─┐
