@@ -16,14 +16,17 @@ import { applyVersion, currentVersion } from '../lib/project.mjs'
 
 const dryRun = process.argv.includes('--dry-run')
 
-const bumper = new Bumper(process.cwd()).loadPreset('conventionalcommits')
+// skipUnstable makes the lookup walk past prerelease tags to the last stable
+// one. Without it a v1.4.0-rc.3 tag becomes the baseline, and the range shrinks
+// to "since the last candidate" — which is one merge, not the release. Nothing
+// tags candidates today; this is what keeps that from being load-bearing.
+const bumper = new Bumper(process.cwd())
+  .loadPreset('conventionalcommits')
+  .tag({ skipUnstable: true })
 
 // `git describe --tags` would return the most recent tag of any kind, while the
 // bumper measures from the last *semver* tag. One non-semver tag is enough to
 // make the script report one tag while computing from another.
-//
-// Only stable tags exist: they are created by tag-release, which runs on main,
-// and main only ever carries a promoted version.
 const tag = await bumper.getLastSemverTag()
 
 // With no tag, conventional-recommended-bump scans the whole history and returns
