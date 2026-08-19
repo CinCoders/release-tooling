@@ -6,12 +6,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.cin.ufpe.br/cincoders/platform/release-tooling.git"
+    "url": "git+https://github.com/cincoders/release-tooling.git"
   },
   "bugs": {
-    "url": "https://gitlab.cin.ufpe.br/cincoders/platform/release-tooling/-/issues"
+    "url": "https://github.com/cincoders/release-tooling/issues"
   },
-  "homepage": "https://gitlab.cin.ufpe.br/cincoders/platform/release-tooling#readme",
+  "homepage": "https://github.com/cincoders/release-tooling#readme",
   "publishConfig": {
     "access": "public"
   },

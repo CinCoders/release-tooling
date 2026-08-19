@@ -45,10 +45,9 @@ npm run release:promote -- --dry-run
 ```
 
 The CI side lives in the pipeline template, which calls these commands:
-`cincoders/platform/ci-templates`.
-
-The source of truth is that GitLab group; GitHub is a one-way push mirror, so a
-pull request opened there cannot be merged back.
+`cincoders/platform/ci-templates`, on the CIn GitLab. That one stays there on
+purpose — it is full of things only the CIn has, from the deploy webhook to the
+registry paths — while this package is generic, which is why it lives here.
 
 ## Three properties worth stating, because each was a defect once
 
