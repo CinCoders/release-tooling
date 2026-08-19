@@ -47,7 +47,7 @@ npm run release:promote -- --dry-run
 The CI side lives in the pipeline template, which calls these commands:
 `cincoders/intranet/ci-templates`.
 
-## Two properties worth stating, because both were defects once
+## Three properties worth stating, because each was a defect once
 
 - **The stable target is derived from the last tag, never accumulated onto the
   current version.** Applying the bump to whatever `package.json` holds re-counts
@@ -57,6 +57,12 @@ The CI side lives in the pipeline template, which calls these commands:
   between two releases produce twenty images with twenty versions, while the
   stable number stays put. Without it every dev build between releases would
   carry the same version.
+
+- **Prerelease tags are walked past when looking for the baseline.** Both the
+  bump and the changelog measure their range from the last semver tag, and
+  `v1.4.0-rc.3` is valid semver. Letting it become the baseline shrinks the range
+  to the commits after the last candidate — one merge — and the stable release
+  ships an empty changelog. This is what lets a project tag its candidates at all.
 
 ## Requirements
 
