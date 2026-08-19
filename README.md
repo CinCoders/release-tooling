@@ -45,7 +45,10 @@ npm run release:promote -- --dry-run
 ```
 
 The CI side lives in the pipeline template, which calls these commands:
-`cincoders/intranet/ci-templates`.
+`cincoders/platform/ci-templates`.
+
+The source of truth is that GitLab group; GitHub is a one-way push mirror, so a
+pull request opened there cannot be merged back.
 
 ## Three properties worth stating, because each was a defect once
 
